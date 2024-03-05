@@ -1,3 +1,4 @@
+-- Using lazy.nvim as our plugin manager.
 -- lazy.nvim (https://github.com/folke/lazy.nvim)
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -16,8 +17,14 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = "\\"
 
+-- Load Lazy
 require("lazy").setup("plugins")
 
+-- Options contains neovim's settings.
 require("user.options")
+
+-- Keymap contains our keybindings.
 require("user.keymap")
+
+-- Upload is my own rsync-based Upload command for remote dev.
 require("user.upload")
