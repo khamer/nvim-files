@@ -1,6 +1,7 @@
 vim.cmd[[colorscheme tokyonight]]
 
 vim.opt.backup = true
+vim.opt.backupdir:remove(".")
 vim.opt.expandtab = true
 vim.opt.ignorecase = true
 vim.opt.laststatus = 3
