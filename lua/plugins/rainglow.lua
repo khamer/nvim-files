@@ -1,3 +1,3 @@
 return {
-	"rainglow/vim",
+	-- "rainglow/vim",
 }

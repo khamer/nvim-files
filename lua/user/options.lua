@@ -1,4 +1,4 @@
-vim.cmd[[colorscheme tokyonight]]
+vim.cmd[[colorscheme ayu]]
 
 vim.opt.backup = true
 vim.opt.backupdir:remove(".")
@@ -14,3 +14,5 @@ vim.opt.swapfile = false
 vim.opt.tabstop = 4
 vim.opt.undofile = true
 vim.opt.whichwrap:append("<,>,[,],h,l")
+
+vim.cmd('hi WinSeparator guifg=#828bb8')

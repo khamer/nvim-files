@@ -10,6 +10,17 @@ return {
 		local telescope = require("telescope")
 
 		telescope.setup({
+            defaults = {
+                preview = {
+                    filesize_limit = 1,
+                    timeout = 250,
+                },
+            },
+            pickers = {
+                colorscheme = {
+                    enable_preview = true
+                }
+            },
 			project = {
 				base_dirs = { "~/Code" },
 			},
