@@ -1,63 +1,38 @@
 local which_key = require("which-key")
 
-which_key.register({
-    [" "] = { "<cmd>nohlsearch<cr>", "clear search" },
-    ["1"] = { "<cmd>bufdo bdelete<cr>", "close all files" },
+which_key.add({
+    { "<leader> ", "<cmd>nohlsearch<cr>", desc = "clear search", nowait = true, remap = false },
+    { "<leader>1", "<cmd>bufdo bdelete<cr>", desc = "close all files", nowait = true, remap = false },
+    { "<leader>a", "<cmd>lua MiniStarter.open()<cr>", desc = "Start", nowait = true, remap = false },
+    { "<leader>R", "<cmd>UploadFolder<cr>", desc = "Rsync File", nowait = true, remap = false },
+    { "<leader>e", "<cmd>NvimTreeToggle<cr>", desc = "neotree", nowait = true, remap = false },
+    { "<leader>f", "<cmd>FzfLua files<cr>", desc = "Find files", nowait = true, remap = false },
+    { "<leader>p", "<cmd>Projects<cr>", desc = "Projects", nowait = true, remap = false },
+    { "<leader>q", "<cmd>lua vim.lsp.buf.format{async=true}<cr>", desc = "Format", nowait = true, remap = false },
+    { "<leader>r", "<cmd>UploadFile<cr>", desc = "Rsync File", nowait = true, remap = false },
+    { "<leader>/", "<cmd>FzfLua live_grep<cr>", desc = "Live grep", nowait = true, remap = false },
+    { "<leader>w", "<cmd>w!<CR>", desc = "Save", nowait = true, remap = false },
 
-    a = { "<cmd>Alpha<cr>", "dashboard" },
+    { "<leader>l", group = "LSP", nowait = true, remap = false },
+    { "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<cr>", desc = "Code Action", nowait = true, remap = false },
+    { "<leader>ld", "<cmd>FzfLua diagnostics_document<cr>", desc = "Document Diagnostics", nowait = true, remap = false },
+    { "<leader>li", "<cmd>LspInfo<cr>", desc = "Info", nowait = true, remap = false },
+    { "<leader>lj", "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>", desc = "Next Diagnostic", nowait = true, remap = false },
+    { "<leader>lk", "<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>", desc = "Prev Diagnostic", nowait = true, remap = false },
+    { "<leader>ll", "<cmd>lua vim.lsp.codelens.run()<cr>", desc = "CodeLens Action", nowait = true, remap = false },
+    { "<leader>lq", "<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>", desc = "Quickfix", nowait = true, remap = false },
+    { "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<cr>", desc = "Rename", nowait = true, remap = false },
+    { "<leader>lw", "<cmd>FzfLua diagnotics_workspace<cr>", desc = "Workspace Diagnostics", nowait = true, remap = false },
 
-    e = { "<cmd>Neotree toggle<cr>", "neotree" },
-
-    f = { "<cmd>lua require('telescope.builtin').find_files()<cr>", "Find files", },
-    F = { "<cmd>lua require('telescope.builtin').find_files({ no_ignore = true })<cr>", "Find files (All)" },
-
-    g = { "<cmd>Legendary<cr>", "legendary" },
-
-    p = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
-    q = { "<cmd>q!<CR>", "Quit" },
-
-    r = { "<cmd>UploadFile<cr>", "Rsync File" },
-    R = { "<cmd>UploadFolder<cr>", "Rsync File" },
-
-    w = { "<cmd>w!<CR>", "Save" },
-
-    l = {
-        name = "LSP",
-        a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
-        d = { "<cmd>Telescope diagnostics bufnr=0<cr>", "Document Diagnostics" },
-        w = { "<cmd>Telescope diagnostics<cr>", "Workspace Diagnostics" },
-        e = { "<Esc><cmd>lua require('telescope').extensions.refactoring.refactors()<CR>", "Refactor" },
-        f = { "<cmd>lua vim.lsp.buf.format{async=true}<cr>", "Format" },
-        i = { "<cmd>LspInfo<cr>", "Info" },
-        I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
-        j = { "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>", "Next Diagnostic" },
-        k = { "<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>", "Prev Diagnostic" },
-        l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
-        q = { "<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>", "Quickfix" },
-        r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
-        s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
-        S = { "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", "Workspace Symbols" },
-    },
-    s = {
-        name = "Search",
-        g = { "<cmd>Telescope live_grep theme=ivy<cr>", "Live grep" },
-        b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
-        c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
-        h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
-        M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
-        r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
-        R = { "<cmd>Telescope registers<cr>", "Registers" },
-        k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
-        C = { "<cmd>Telescope commands<cr>", "Commands" },
-    },
-
-    t = {
-        name = "Terminal",
-        n = { "<cmd>lua _NODE_TOGGLE()<cr>", "Node" },
-        u = { "<cmd>lua _NCDU_TOGGLE()<cr>", "NCDU" },
-        t = { "<cmd>lua _HTOP_TOGGLE()<cr>", "Htop" },
-        p = { "<cmd>lua _PYTHON_TOGGLE()<cr>", "Python" },
-    },
+    { "<leader>s", group = "Search", nowait = true, remap = false },
+    { "<leader>sC", "<cmd>FzfLua commands<cr>", desc = "Commands", nowait = true, remap = false },
+    { "<leader>sM", "<cmd>FzfLua manpages<cr>", desc = "Man Pages", nowait = true, remap = false },
+    { "<leader>sR", "<cmd>FzfLua registers<cr>", desc = "Registers", nowait = true, remap = false },
+    { "<leader>sb", "<cmd>FzfLua git_branches<cr>", desc = "Checkout branch", nowait = true, remap = false },
+    { "<leader>sc", "<cmd>FzfLua colorscheme<cr>", desc = "Colorscheme", nowait = true, remap = false },
+    { "<leader>sh", "<cmd>FzfLua helptags<cr>", desc = "Find Help", nowait = true, remap = false },
+    { "<leader>sk", "<cmd>FzfLua keymaps<cr>", desc = "Keymaps", nowait = true, remap = false },
+    { "<leader>sr", "<cmd>FzfLua oldfiles<cr>", desc = "Open Recent File", nowait = true, remap = false },
 }, {
     mode = "n",
     prefix = "<leader>",
@@ -66,8 +41,8 @@ which_key.register({
     nowait = true,
 })
 
-which_key.register({
-    j = { "<Esc><cmd>'<,'>!python -m json.tool<CR>", "Format JSON" },
+which_key.add({
+    { "<leader>j", "<Esc><cmd>'<,'>!python -m json.tool<CR>", desc = "Format JSON", mode = "v", nowait = true, remap = false },
 }, {
     mode = "v",
     prefix = "<leader>",

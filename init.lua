@@ -17,6 +17,10 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = "\\"
 
+-- Nvim-tree wants this set before the plugin is loaded.
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 -- Load Lazy
 require("lazy").setup("plugins")
 
@@ -28,3 +32,6 @@ require("user.keymap")
 
 -- Upload is my own rsync-based Upload command for remote dev.
 require("user.upload")
+
+-- Which-key bindings.
+require("user.which-key")

@@ -1,18 +1,14 @@
 return {
-	"neovim/nvim-lspconfig",
-	dependencies = {
-		"williamboman/mason-lspconfig.nvim",
-        "hrsh7th/cmp-nvim-lsp",
-	},
-    config = function()
+    "neovim/nvim-lspconfig",
+    dependencies = {
+        "williamboman/mason-lspconfig.nvim",
+        "saghen/blink.cmp",
+    },
+    config = function(_, opts)
         local lspconfig = require("lspconfig")
-        local capabilities = require("cmp_nvim_lsp").default_capabilities()
-
-        lspconfig.bashls.setup({ capabilities = capabilities })
-        lspconfig.cssls.setup({ capabilities = capabilities })
-        lspconfig.html.setup({ capabilities = capabilities })
-        lspconfig.tsserver.setup({ capabilities = capabilities })
-        lspconfig.intelephense.setup({ capabilities = capabilities })
-        lspconfig.volar.setup({ capabilities = capabilities })
+        for server, config in pairs(opts.servers or {}) do
+            config.capabilities = require('blink.cmp').get_lsp_capabilities(config.capabilities)
+            lspconfig[server].setup(config)
+        end
     end,
 }
