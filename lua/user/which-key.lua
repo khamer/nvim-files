@@ -7,6 +7,7 @@ which_key.add({
     { "<leader>R", "<cmd>UploadFolder<cr>", desc = "Rsync File", nowait = true, remap = false },
     { "<leader>e", "<cmd>NvimTreeToggle<cr>", desc = "neotree", nowait = true, remap = false },
     { "<leader>f", "<cmd>FzfLua files<cr>", desc = "Find files", nowait = true, remap = false },
+    { "<leader>g", "<cmd>lua Snacks.lazygit()<cr>", desc = "Lazygit", nowait = true, remap = false },
     { "<leader>p", "<cmd>Projects<cr>", desc = "Projects", nowait = true, remap = false },
     { "<leader>q", "<cmd>lua vim.lsp.buf.format{async=true}<cr>", desc = "Format", nowait = true, remap = false },
     { "<leader>r", "<cmd>UploadFile<cr>", desc = "Rsync File", nowait = true, remap = false },
