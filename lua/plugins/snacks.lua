@@ -3,8 +3,11 @@ return {
     priority = 1000,
     lazy = false,
     opts = {
+        bigfile = { enabled = true },
+        indent = { enabled = true },
+        lazygit = { enabled = true },
         notifier = { enabled = true },
         statuscolumn = { enabled = true },
-        lazygit = { enabled = true },
+        zen = {},
     },
 }
