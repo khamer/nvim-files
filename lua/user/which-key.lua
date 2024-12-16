@@ -14,6 +14,8 @@ which_key.add({
     { "<leader>/", "<cmd>FzfLua live_grep<cr>", desc = "Live grep", nowait = true, remap = false },
     { "<leader>w", "<cmd>w!<CR>", desc = "Save", nowait = true, remap = false },
 
+    { "<leader>z", "<cmd> lua Snacks.zen()<cr>", desc = "Zen mode", nowait = true, remap = false },
+
     { "<leader>l", group = "LSP", nowait = true, remap = false },
     { "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<cr>", desc = "Code Action", nowait = true, remap = false },
     { "<leader>ld", "<cmd>FzfLua diagnostics_document<cr>", desc = "Document Diagnostics", nowait = true, remap = false },
