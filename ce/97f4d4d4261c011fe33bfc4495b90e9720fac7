@@ -1,0 +1,23 @@
+README.md
+  05812aec9df982c1 1-8,10-54
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.4",
+  "base_commit_sha": "ce97f4d4d4261c011fe33bfc4495b90e9720fac7",
+  "prompts": {
+    "05812aec9df982c1": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "16441bf0-a3e4-482b-a29c-050a65e566ed",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "Kevin Hamer",
+      "messages": [],
+      "total_additions": 59,
+      "total_deletions": 0,
+      "accepted_lines": 53,
+      "overriden_lines": 1
+    }
+  }
+}
