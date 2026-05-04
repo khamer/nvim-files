@@ -9,11 +9,12 @@ wk.add({
   { "<leader>g", "<cmd>lua Snacks.lazygit()<cr>", desc = "lazygit" },
   { "<leader>G", "<cmd>lua Snacks.gitbrowse.open()<cr>", desc = "open repo" },
   { "<leader>z", "<cmd>lua Snacks.zen()<cr>", desc = "zen mode" },
-  { "<leader>1", "<cmd>bufdo bdelete<cr>", desc = "close all files" },
+  { "<leader>1", function() vim.cmd("bufdo bdelete") Snacks.dashboard() end, desc = "close all files" },
   { "<leader> ", "<cmd>nohlsearch<cr>", desc = "clear search" },
   { "<leader>e", "<cmd>lua Snacks.explorer()<cr>", desc = "files sidebar" },
   { "<leader>t", "<cmd>lua Snacks.terminal()<cr>", desc = "terminal" },
   { "<leader>d", "<cmd>lua Snacks.words.jump()<cr>", desc = "jump" },
+  { "<leader>n", "<cmd>lua Snacks.notifier.show_history()<cr>", desc = "notifications" },
 })
 
 wk.add({
