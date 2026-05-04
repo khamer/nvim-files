@@ -1,4 +1,4 @@
--- vim.cmd[[colorscheme challenger_deep]]
+vim.cmd.colorscheme("challenger_deep")
 
 vim.opt.backup = true
 vim.opt.backupdir:remove(".")
