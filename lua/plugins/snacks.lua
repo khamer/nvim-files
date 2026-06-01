@@ -29,7 +29,7 @@ return {
       notifier = {},
       quickfile = {},
       scope = {},
-      scroll = {},
+      -- scroll = {},
       statuscolumn = {},
       terminal = {},
       -- toggle = {},
