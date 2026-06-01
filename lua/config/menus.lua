@@ -6,6 +6,7 @@ wk.add({
   noremap = true,
   nowait = true,
   { "<leader>f", "<cmd>lua Snacks.picker('files')<cr>", desc = "open file" },
+  { "<leader>/", "<cmd>lua Snacks.picker('grep')<cr>", desc = "search files" },
   { "<leader>g", "<cmd>lua Snacks.lazygit()<cr>", desc = "lazygit" },
   { "<leader>G", "<cmd>lua Snacks.gitbrowse.open()<cr>", desc = "open repo" },
   { "<leader>z", "<cmd>lua Snacks.zen()<cr>", desc = "zen mode" },
