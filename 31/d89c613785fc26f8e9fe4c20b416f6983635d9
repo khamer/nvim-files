@@ -1,0 +1,27 @@
+lua/plugins/challenger-deep-theme.lua
+  s_376bd4fe5e6d65::t_011c4b1af64383 3-4,36-37
+  s_376bd4fe5e6d65::t_e3c59fe3349238 38
+lua/plugins/dracula-vim.lua
+  s_376bd4fe5e6d65::t_011c4b1af64383 3
+  s_376bd4fe5e6d65::t_ff0aa18fa25c95 1-2
+  s_376bd4fe5e6d65::t_c79d28fe1bd57c 4
+lazy-lock.json
+  s_376bd4fe5e6d65::t_c8c40712e151a3 3,5
+  s_376bd4fe5e6d65::t_ef994701709ce6 11-13,15-16,20
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "31d89c613785fc26f8e9fe4c20b416f6983635d9",
+  "prompts": {},
+  "sessions": {
+    "s_376bd4fe5e6d65": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_0c7f984a0ffew52ymaUZ4xjHSi",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Kevin Hamer <kevin@imarc.com>"
+    }
+  }
+}
