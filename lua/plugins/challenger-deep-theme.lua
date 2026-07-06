@@ -1,6 +1,7 @@
 return {
   "challenger-deep-theme/vim",
-  lazy = true,
+  name = "challenger-deep-theme",
+  lazy = false,
   priority = 1000,
   init = function()
     local group = vim.api.nvim_create_augroup("kevin_challenger_deep_snacks_picker", { clear = true })
@@ -31,5 +32,8 @@ return {
     })
 
     set_snacks_picker_highlights()
+  end,
+  config = function()
+    vim.cmd.colorscheme("challenger_deep")
   end,
 }
